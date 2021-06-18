@@ -17,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\V1\" />
+    <ProjectReference Include="..\Adt.Challenge.Business\Adt.Challenge.Business.csproj" />
+    <ProjectReference Include="..\Adt.Challenge.Infra.Data\Adt.Challenge.Infra.Data.csproj" />
   </ItemGroup>
 
 
