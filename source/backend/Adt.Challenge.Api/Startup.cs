@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.OpenApi.Models;
+using Adt.Challenge.Api.Configuration;
 
 namespace ADT.CHALLENGE.API
 {
@@ -27,6 +28,7 @@ namespace ADT.CHALLENGE.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.ResolveDependencias(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = typeof(Program).Assembly.GetName().Name, Version = "v1" });
