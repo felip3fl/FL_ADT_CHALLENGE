@@ -28,7 +28,7 @@ namespace ADT.CHALLENGE.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.ResolveDependencias(Configuration);
+            services.SolveDependencies();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = typeof(Program).Assembly.GetName().Name, Version = "v1" });

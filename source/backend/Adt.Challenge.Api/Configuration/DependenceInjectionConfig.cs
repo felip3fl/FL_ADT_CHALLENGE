@@ -11,7 +11,7 @@ namespace Adt.Challenge.Api.Configuration
 {
     public static class DependenceInjectionConfig
     {
-        public static IServiceCollection ResolveDependencias(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection SolveDependencies(this IServiceCollection services)
         {
             #region INFRA
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
