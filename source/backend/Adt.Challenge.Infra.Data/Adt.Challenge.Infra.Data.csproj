@@ -8,4 +8,10 @@
     <ProjectReference Include="..\Adt.Challenge.Business\Adt.Challenge.Business.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Repository\Crv\Source\restaurant-hours.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
