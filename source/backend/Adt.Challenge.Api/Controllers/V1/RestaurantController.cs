@@ -25,8 +25,8 @@ namespace Adt.Challenge.Api.Controllers.V1
         {
             var restaurants = await _usuarioService.GetNameByHourMinute(hourMinute);
 
-            if(restaurants.Count == 0)
-                return NotFound(restaurants);
+            if(restaurants == null)
+                return NotFound(hourMinute);
 
             return Ok(restaurants);
         }
