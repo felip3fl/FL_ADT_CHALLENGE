@@ -27,9 +27,4 @@
     <ProjectReference Include="..\Adt.Challenge.Infra.Data\Adt.Challenge.Infra.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Core\Business\" />
-    <Folder Include="Infra\Data\" />
-  </ItemGroup>
-
 </Project>
