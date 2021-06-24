@@ -29,9 +29,9 @@ namespace Adt.Challenge.Business.Services
                 var hourMinuteTime = Convert.ToDateTime(hourMinute).TimeOfDay;
                 return this.GetNameByHourMinute(hourMinuteTime);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new ArgumentException(ex.Message);
+                return Task.FromResult<List<string>>(null);
             }
         }
 
@@ -41,9 +41,9 @@ namespace Adt.Challenge.Business.Services
             {
                 return _restaurantRepository.GetNameByHourMinute(hourMinute);
             }
-            catch (Exception ex)
-            {   
-                throw new ArgumentException(ex.Message);
+            catch (Exception)
+            {
+                return Task.FromResult<List<string>>(null);
             }
         }
     }
