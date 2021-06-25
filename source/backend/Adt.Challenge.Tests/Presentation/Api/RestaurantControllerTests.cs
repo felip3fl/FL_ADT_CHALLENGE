@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Adt.Challenge.Api.Controllers.V1;
 using Adt.Challenge.Business.Interfaces.Services;
 using Moq;
@@ -8,7 +6,6 @@ using Xunit;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Adt.Challenge.Business.Models;
 
 namespace Adt.Challenge.Tests.Presentation.Api
 {
@@ -18,13 +15,13 @@ namespace Adt.Challenge.Tests.Presentation.Api
         public void Should_Create_New_Object()
         {
             //arrange
-            var mockRestaurantService = Mock.Of<IRestaurantService>();
+            var restaurantServiceMock = Mock.Of<IRestaurantService>();
 
             //act
-            var controller = new RestaurantController(mockRestaurantService);
+            var result = new RestaurantController(restaurantServiceMock);
 
             //assert
-            controller.Should().NotBeNull();
+            result.Should().NotBeNull();
         }
 
         [Fact]
@@ -32,7 +29,8 @@ namespace Adt.Challenge.Tests.Presentation.Api
         {
             //arrange
             var hourMinute = "00";
-            var restaurantController = new RestaurantController(Mock.Of<IRestaurantService>());
+            var restaurantServiceMock = Mock.Of<IRestaurantService>();
+            var restaurantController = new RestaurantController(restaurantServiceMock);
 
             //act
             var result = await restaurantController.GetNameByHourMinute(hourMinute);
@@ -49,18 +47,20 @@ namespace Adt.Challenge.Tests.Presentation.Api
             //arrange
             var hourMinute = "00:12";
             var expectedReturn = new List<string>();
-            var service = new Mock<IRestaurantService>();
-            service
+            var restaurantServiceMock = new Mock<IRestaurantService>();
+            restaurantServiceMock
                 .Setup(x => x.GetNameByHourMinute(It.IsAny<string>()))
                 .ReturnsAsync(expectedReturn);
 
-            var controller = new RestaurantController(service.Object);
+            var controller = new RestaurantController(restaurantServiceMock.Object);
 
             //act
             var result = await controller.GetNameByHourMinute(hourMinute);
 
             //assert
-            result.Should().BeOfType<OkObjectResult>().Which.Value.Should().Be(expectedReturn);
+            result
+                .Should().BeOfType<OkObjectResult>()
+                .Which.Value.Should().Be(expectedReturn);
         }
 
     }
