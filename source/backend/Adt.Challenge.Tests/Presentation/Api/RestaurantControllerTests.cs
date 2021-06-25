@@ -18,8 +18,10 @@ namespace Adt.Challenge.Tests.Presentation.Api
         public void Should_Create_New_Object()
         {
             //arrange
+            var mockRestaurantService = Mock.Of<IRestaurantService>();
+
             //act
-            var controller = new RestaurantController(Mock.Of<IRestaurantService>());
+            var controller = new RestaurantController(mockRestaurantService);
 
             //assert
             controller.Should().NotBeNull();
@@ -40,5 +42,26 @@ namespace Adt.Challenge.Tests.Presentation.Api
                 .Should().BeOfType<NotFoundObjectResult>()
                 .Which.Value.Should().Be(hourMinute);
         }
+
+        [Fact]
+        public async Task ValidHourMinute_ShouldReturn_Ok()
+        {
+            //arrange
+            var hourMinute = "00:12";
+            var expectedReturn = new List<string>();
+            var service = new Mock<IRestaurantService>();
+            service
+                .Setup(x => x.GetNameByHourMinute(It.IsAny<string>()))
+                .ReturnsAsync(expectedReturn);
+
+            var controller = new RestaurantController(service.Object);
+
+            //act
+            var result = await controller.GetNameByHourMinute(hourMinute);
+
+            //assert
+            result.Should().BeOfType<OkObjectResult>().Which.Value.Should().Be(expectedReturn);
+        }
+
     }
 }
