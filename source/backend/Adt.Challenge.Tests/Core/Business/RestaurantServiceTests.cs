@@ -29,7 +29,7 @@ namespace Adt.Challenge.Tests.Core.Business
 
         [Theory]
         [MemberData(nameof(ValidStringHourMinute))]
-        public async Task ValidHourMinute_ShouldReturn_Restaurants(string HourMinute)
+        public async Task ValidHourMinute_ShouldReturn_NotBeNull(string HourMinute)
         {
             //arrange
             var restaurantsName = new List<string>();
