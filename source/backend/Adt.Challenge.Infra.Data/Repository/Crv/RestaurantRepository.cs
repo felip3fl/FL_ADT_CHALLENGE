@@ -17,10 +17,10 @@ namespace Adt.Challenge.Infra.Data.Repository.Crv
         {
             var restaurants = await this.GetAll(true);
 
-            var restaurantsByHourMinute = (from student in restaurants
-                                           where student.TimeOpen <= hourMinutetime
-                                           && student.TimeClosed >= hourMinutetime
-                                           select student.Name).ToList();
+            var restaurantsByHourMinute = (from restaurant in restaurants
+                                           where restaurant.TimeOpen <= hourMinutetime
+                                           && restaurant.TimeClosed >= hourMinutetime
+                                           select restaurant.Name).ToList();
 
             return restaurantsByHourMinute;
         }
