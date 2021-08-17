@@ -10,7 +10,7 @@ namespace Adt.Challenge.Api.Controllers.V1
 {
     [ApiController]
     [ApiVersion("1.0")]
-    [Route("[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class RestaurantController : Controller
     {
         private readonly IRestaurantService _usuarioService;
