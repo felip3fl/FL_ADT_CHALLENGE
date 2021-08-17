@@ -40,7 +40,11 @@ namespace ADT.CHALLENGE.API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = typeof(Program).Assembly.GetName().Name, Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo {
+                    Title = typeof(Program).Assembly.GetName().Name.ToUpper(),
+                    Version = "v" + typeof(Program).Assembly.GetName().Version.ToString(),
+                    Description = "API para realiza��o leitura do arquivo CSV. Desenvolvido por Felip3FL"
+                });
             });
         }
 
