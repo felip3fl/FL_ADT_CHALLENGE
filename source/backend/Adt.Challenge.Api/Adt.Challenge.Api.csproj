@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>2dcebd03-37a7-4d9c-b472-3dd8ad3b2e8a</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AssemblyVersion>1.0.1.*</AssemblyVersion>
+    <Deterministic>false</Deterministic>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
