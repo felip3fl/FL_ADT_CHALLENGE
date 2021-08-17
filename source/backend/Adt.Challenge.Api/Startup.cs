@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Adt.Challenge.Api.Configuration;
+using System.IO;
 
 namespace ADT.CHALLENGE.API
 {
@@ -45,6 +46,8 @@ namespace ADT.CHALLENGE.API
                     Version = "v" + typeof(Program).Assembly.GetName().Version.ToString(),
                     Description = "API para realiza��o leitura do arquivo CSV. Desenvolvido por Felip3FL"
                 });
+
+                c.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "Adt.Challenge.Api.xml"));
             });
         }
 
