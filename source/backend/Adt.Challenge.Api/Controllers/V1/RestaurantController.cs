@@ -1,5 +1,6 @@
 ﻿using Adt.Challenge.Business.Interfaces.Services;
 using Adt.Challenge.Business.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Adt.Challenge.Api.Controllers.V1
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [EnableCors("AllowOrigin")]
     public class RestaurantController : Controller
     {
         private readonly IRestaurantService _usuarioService;

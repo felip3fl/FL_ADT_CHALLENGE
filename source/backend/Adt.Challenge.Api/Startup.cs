@@ -33,6 +33,16 @@ namespace ADT.CHALLENGE.API
                 
             });
 
+            services.AddCors(
+                options =>
+                {
+                    options.AddPolicy("AllowOrigin", builder => 
+                    builder.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .SetIsOriginAllowed(origin => true));
+                }
+            );
+
             services.AddVersionedApiExplorer(options => {
                 options.GroupNameFormat = "'v'VVV";
                 options.SubstituteApiVersionInUrl = true;
@@ -67,6 +77,11 @@ namespace ADT.CHALLENGE.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(x => x.AllowAnyMethod()
+            .AllowAnyHeader()
+            .SetIsOriginAllowed(origin => true)
+            );
 
             app.UseEndpoints(endpoints =>
             {
