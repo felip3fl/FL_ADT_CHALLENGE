@@ -13,7 +13,7 @@ namespace Adt.Challenge.Api.Controllers.V1
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [EnableCors("AllowOrigin")]
-    public class RestaurantController : Controller
+    public class RestaurantController : BaseController
     {
         private readonly IRestaurantService _usuarioService;
 

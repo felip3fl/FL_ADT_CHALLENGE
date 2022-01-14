@@ -10,7 +10,7 @@
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "Development": {
-      "commandName": "Project",
+      "commandName": "Development",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
