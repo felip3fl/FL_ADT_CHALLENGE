@@ -4,6 +4,28 @@
      
 </br>
 
+# DESCRIÇÃO DO DESAFIO
+
+Com base no CSV em anexo, construa uma solução que receba uma hora do dia como input no formato HH:MM, sendo HH entre 1 e 24 e MM entre 00 e 60, e retorne uma lista com os nomes dos restaurantes que estão abertos nessa hora. Você tem autonomia para escolher os padrões do projeto, organização de arquivos e pastas, tipo da solução (API, console, MVC, microsserviço, etc).
+
+Atenção: O CSV em anexo não é simplesmente a estrutura que dita como será mapeado a sua classe de Restaurant, a aplicação deve ser capaz de ler e interpretar um arquivo CSV. Não precisa se preocupar com time zones, vamos supor que todas as horas são locais.
+O time espera que você entregue os requisitos mínimos:
+
+1. Funcionar (recomendamos usar o Docker para simular sistemas operacionais diferentes);
+2. Suíte de testes unitários que sejam relevantes (Xunit, Moq);
+3. README explicando como funciona o projeto e o porquê das suas escolhas.
+
+O que será avaliado:
+
+1. Qualidade do código (funcionalidade, manutenibilidade, desempenho);
+2. Algoritmo;
+3. Arquitetura;
+4. Testes de unidade;
+5. Utilização do Git.
+
+O desafio deve ser entregue usando o Framework .NET Core 3.1 ou superior em um repositório público do Github para que o time possa avaliar a qualidade da sua entrega.!
+</br>
+</br>
 # INSTRUÇÕES PARA EXECUÇÃO
 </br>
 Execute a aplicação e abra a documentação (Swagger), logo após carregar a página, click no botão 'GET', conforme a imagem abaixo:
