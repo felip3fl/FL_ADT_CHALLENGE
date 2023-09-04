@@ -29,7 +29,7 @@ namespace Adt.Challenge.Api.Controllers.V1
         /// <param name="hourMinute" example="12:59">Hora e minuto</param>
         /// <response code="200">Lista de restaurantes retornado com sucesso</response>
         /// <response code="404">Nenhum dado encontrado</response>
-        [HttpGet("GetNameByHourMinute/{hourMinute:string}")]
+        [HttpGet("GetNameByHourMinute/{hourMinute}")]
         public async Task<ActionResult> GetNameByHourMinute(string hourMinute)
         {
             var restaurants = await _usuarioService.GetNameByHourMinute(hourMinute);
